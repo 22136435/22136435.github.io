@@ -1,0 +1,259 @@
+body {
+	background-color: #222222;
+	font-family: "Inter", sans-serif;
+	max-width: 100%; 
+	margin: auto;
+	padding: 0;
+    overflow-x: hidden;
+}
+p {
+	color: #eaeaea;
+}
+nav {
+	background-color: #444444;
+	padding: 10px 20px; 
+	display: flex; 
+	align-items: center; 
+	justify-content: space-between;
+}
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: right;
+	font-family: "Inter", sans-serif;
+}
+
+nav ul li {
+	margin: 0 15px;
+}
+
+nav ul li a {
+	color: #aaaaaa;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+nav ul li a:hover {
+	color: #333333;
+}
+
+nav ul li a.active {
+	color: #1db954;
+}
+
+nav img {
+	height: 50;
+	max-width: 100%;
+}
+.mtext {
+	position: absolute;
+	top: 20%;
+	right: 5%;
+	width: 35%;
+	text-align: left;
+	border-radius: 5px;
+	direction: ltr;
+	background-color: rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(5px);
+	padding: 20px;
+}
+.mtext p {
+	color: #ffffff;
+	font-size: 0.95vw;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+	line-height: 1.5;
+	margin: 10px 0;
+	font-weight: 500;
+	text-align: left;
+}
+.mtext h2 {
+	color: #ffffff;
+	font-size: 2vw;
+	margin-bottom: 15px;
+	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+	font-weight: bold;
+	text-align: left;
+}
+.container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-wrap: wrap;
+	height: calc(100vh - 120px);
+	overflow: auto;
+}
+.mimage {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.wmessage {
+	color: #eaeaea;
+	flex: 1 1 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+/* Медиа-запросы для адаптивности */
+@media only screen and (max-width: 768px) {
+	nav {
+		flex-direction: column;
+		padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+	}
+	
+	nav ul {
+		flex-direction: column;
+		align-items: center;
+		margin-top: 15px;
+		width: 100%;
+	}
+	
+	nav ul li {
+		margin: 10px 0;
+		text-align: center;
+        width: 100%;
+	}
+	
+	nav ul li a {
+		font-size: 18px;
+        display: block;
+        padding: 8px 0;
+        width: 100%;
+	}
+	
+	.mtext {
+		position: static;
+		width: 100%;
+		margin: 0;
+		padding: 20px;
+        box-sizing: border-box;
+		background-color: rgba(0,0,0,0.7);
+	}
+	
+	.mtext p {
+		font-size: 16px;
+        margin: 15px 0;
+	}
+	
+	.mtext h2 {
+		font-size: 24px;
+        margin-top: 0;
+	}
+	
+	.container {
+		flex-direction: column;
+        position: static;
+	}
+    
+    .wmessage {
+        padding: 15px;
+    }
+    
+    .wmessage h3 {
+        font-size: 18px;
+    }
+}
+
+/* Стили для формы регистрации */
+.register-form {
+    max-width: 550px;
+    margin: 40px auto;
+    padding: 24px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.register-form h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #24292e;
+    text-align: center;
+}
+
+.register-form table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.register-form table td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.register-form table td:first-child {
+    width: 40%;
+    text-align: right;
+    padding-right: 15px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #24292e;
+}
+
+.register-form table td:last-child {
+    width: 60%;
+}
+
+.register-form input {
+    width: 100%;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #24292e;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.register-form input:focus {
+    border-color: #0366d6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+}
+
+.form-submit {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #2ea44f;
+    color: #ffffff;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.form-submit:hover {
+    background-color: #2c974b;
+}
+
+.form-note {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #586069;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .register-form {
+        max-width: 100%;
+        margin: 0 15px;
+    }
+}
