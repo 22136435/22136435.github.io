@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Celtec Games</title>
+		<link href="A2styles_d.css" rel="stylesheet" type="text/css">
+		<script src="redirect.js"></script>
+	</head>
+	<body>
+		<nav>	
+			<a href="index_d.htm"><img src="images/logo_d.png" alt="Company Logo" width="150"></a>
+        		<ul>
+            			<li><a href="about_d.htm">About</a></li>
+            			<li><a href="product_d.htm">Products</a></li>
+	  			<li><a href="blog_d.htm">Blog</a></li>
+            			<li><a href="contact_d.htm" class="active">Contact</a></li>
+				<li><a href="contact.htm"><img src="images/lightmode.png" alt="Light Mode" width="20"></a></li>
+        		</ul>
+		</nav>
+		<div class="container">
+			<div class="register-form">
+				<h2>Register for Celtec Games</h2>
+				<form id="registration-form" action="#" method="post">
+					<table>
+						<tr>
+							<td><label for="name">Name</label></td>
+							<td><input type="text" id="name" name="name" placeholder="Enter your name" required></td>
+						</tr>
+						<tr>
+							<td><label for="telephone">Telephone Number</label></td>
+							<td><input type="tel" id="telephone" name="telephone" placeholder="Enter your telephone number" required></td>
+						</tr>
+						<tr>
+							<td><label for="email">Email Address</label></td>
+							<td><input type="email" id="email" name="email" placeholder="Enter your email address" required></td>
+						</tr>
+						<tr>
+							<td><label for="password">Password</label></td>
+							<td><input type="password" id="password" name="password" placeholder="Create a password" required></td>
+						</tr>
+						<tr>
+							<td><label for="confirm-password">Confirm Password</label></td>
+							<td><input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<button type="submit" class="form-submit">Create account</button>
+							</td>
+						</tr>
+					</table>
+					<p class="form-note">By creating an account, you agree to our Terms of Service and Privacy Policy.</p>
+				</form>
+			</div>
+		</div>
+		
+		<script>
+			document.getElementById('registration-form').addEventListener('submit', function(e) {
+				e.preventDefault();
+				
+				// Получение значений из формы
+				const name = document.getElementById('name').value;
+				const telephone = document.getElementById('telephone').value;
+				const email = document.getElementById('email').value;
+				const password = document.getElementById('password').value;
+				const confirmPassword = document.getElementById('confirm-password').value;
+				
+				// Валидация
+				let isValid = true;
+				let errorMessage = '';
+				
+				// Проверка имени
+				if (name.length < 3) {
+					isValid = false;
+					errorMessage += 'Name must be at least 3 characters long.\n';
+				}
+				
+				// Проверка телефона
+				const phoneRegex = /^\+?[0-9]{10,15}$/;
+				if (!phoneRegex.test(telephone)) {
+					isValid = false;
+					errorMessage += 'Please enter a valid phone number (10-15 digits).\n';
+				}
+				
+				// Проверка email
+				const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				if (!emailRegex.test(email)) {
+					isValid = false;
+					errorMessage += 'Please enter a valid email address.\n';
+				}
+				
+				// Проверка пароля
+				if (password.length < 8) {
+					isValid = false;
+					errorMessage += 'Password must be at least 8 characters long.\n';
+				}
+				
+				// Проверка совпадения паролей
+				if (password !== confirmPassword) {
+					isValid = false;
+					errorMessage += 'Passwords do not match.\n';
+				}
+				
+				// Если все в порядке, благодарим пользователя
+				if (isValid) {
+					alert('Thank you for registering with Celtec Games! We will contact you soon.');
+					this.reset();
+				} else {
+					alert('Please correct the following errors:\n' + errorMessage);
+				}
+			});
+		</script>
+	</body>
+</html>
+
+
+
